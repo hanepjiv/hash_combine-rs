@@ -1,6 +1,6 @@
 [package]
-name = "hash_combine"
-version = "0.1.0"
-authors = ["hanepjiv <hanepjiv@gmail.com>"]
+name            = "hash_combine"
+version         = "0.1.0"
+authors         = ["hanepjiv <hanepjiv@gmail.com>"]
 
 [dependencies]
