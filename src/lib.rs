@@ -2,7 +2,7 @@
 
 // @author hanepjiv <hanepjiv@gmail.com>
 // @since 2016/03/12
-// @date 2016/05/04
+// @date 2016/05/08
 
 // The MIT License (MIT)
 //
@@ -53,15 +53,17 @@ pub struct CombineHasher {
     value:      u32,
 }
 /* ========================================================================== */
+impl Default for CombineHasher {
+    /* ====================================================================== */
+    fn default() -> Self { CombineHasher {
+        value:  0u32,
+    } }
+}
+/* ========================================================================== */
 impl CombineHasher {
     /* ====================================================================== */
     /// new
-    pub fn new() -> Self { CombineHasher {
-        value:  0u32,
-    } }
-    /* ====================================================================== */
-    /// new_with_value
-    pub fn new_with_value(value: u32) -> Self { CombineHasher {
+    pub fn new(value: u32) -> Self { CombineHasher {
         value:  value,
     } }
 }
@@ -85,7 +87,7 @@ mod tests {
     /* ====================================================================== */
     #[test]
     fn hash_combine() {
-        let mut a = CombineHasher::new();
+        let mut a = CombineHasher::default();
         a.write(&[
             0x2bu8, 0x6cu8, 0x81u8, 0x58u8,
             0xe8u8, 0x0fu8,
@@ -95,7 +97,7 @@ mod tests {
         ]);
         assert!(0x03d71136u32 == a.finish() as u32, "CombineHasher::finish");
 
-        let mut a = CombineHasher::new_with_value(0u32);
+        let mut a = CombineHasher::new(0u32);
         a.write(&[
             0x2bu8, 0x6cu8, 0x81u8, 0x58u8,
             0xe8u8, 0x0fu8,
