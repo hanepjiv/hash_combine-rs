@@ -1,5 +1,5 @@
 # -*- mode:toml; coding:utf-8-unix; -*-
-# ==============================================================================
+# =============================================================================
 [package]
 name            = "hash_combine"
 version         = "0.2.1"
@@ -11,5 +11,5 @@ readme          = "README.md"
 documentation   = "https://github.com/hanepjiv/hash_combine-rs/wiki"
 homepage        = "https://github.com/hanepjiv/hash_combine-rs"
 repository      = "https://github.com/hanepjiv/hash_combine-rs.git"
-# ==============================================================================
+# =============================================================================
 [dependencies]
