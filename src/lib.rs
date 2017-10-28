@@ -6,7 +6,7 @@
 //  @author hanepjiv <hanepjiv@gmail.com>
 //  @copyright The MIT License (MIT) / Apache License Version 2.0
 //  @since 2016/03/12
-//  @date 2017/02/23
+//  @date 2017/07/21
 
 // ////////////////////////////////////////////////////////////////////////////
 // attribute  =================================================================
@@ -59,17 +59,9 @@
     unused_variables,
     while_true,
     exceeding_bitshifts,
-    hr_lifetime_in_assoc_type,
-    illegal_floating_point_constant_pattern,
-    illegal_struct_or_enum_constant_pattern,
-    inaccessible_extern_crate,
     invalid_type_param_default,
-    lifetime_underscore,
     mutable_transmutes,
     no_mangle_const_items,
-    overlapping_inherent_impls,
-    super_or_self_in_global_path,
-    transmute_from_fn_item_types,
     unknown_crate_types,
 )]
 #![warn(
@@ -90,7 +82,7 @@ use ::std::hash::Hasher;
 pub fn hash_combine(a_seed: u32, bytes: &[u8]) -> u32 {
     let mut seed = a_seed;
     for b in bytes {
-        seed ^= (*b as u32) ^ 0x9e3779b9u32 ^ (seed << 6u32) ^ (seed >> 2u32) ;
+        seed ^= (*b as u32) ^ 0x9e3779b9u32 ^ (seed << 6u32) ^ (seed >> 2u32);
     }
     seed
 }
@@ -138,16 +130,6 @@ mod tests {
     #[test]
     fn hash_combine() {
         let mut a = CombineHasher::default();
-        a.write(&[
-            0x2bu8, 0x6cu8, 0x81u8, 0x58u8,
-            0xe8u8, 0x0fu8,
-            0x11u8, 0xe5u8,
-            0x82u8, 0xf7u8,
-            0x00u8, 0x03u8, 0x0du8, 0x80u8, 0x79u8, 0x67u8
-        ]);
-        assert!(0x03d71136u32 == a.finish() as u32, "CombineHasher::finish");
-
-        let mut a = CombineHasher::new(0u32);
         a.write(&[
             0x2bu8, 0x6cu8, 0x81u8, 0x58u8,
             0xe8u8, 0x0fu8,
