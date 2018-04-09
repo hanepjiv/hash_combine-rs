@@ -6,7 +6,7 @@
 //  @author hanepjiv <hanepjiv@gmail.com>
 //  @copyright The MIT License (MIT) / Apache License Version 2.0
 //  @since 2016/03/12
-//  @date 2017/07/21
+//  @date 2018/04/10
 
 // ////////////////////////////////////////////////////////////////////////////
 // attribute  =================================================================
@@ -39,7 +39,8 @@ use std::hash::Hasher;
 pub fn hash_combine(a_seed: u32, bytes: &[u8]) -> u32 {
     let mut seed = a_seed;
     for b in bytes {
-        seed ^= (*b as u32) ^ 0x9e3779b9u32 ^ (seed << 6u32) ^ (seed >> 2u32);
+        seed ^=
+            u32::from(*b) ^ 0x9e37_79b9u32 ^ (seed << 6u32) ^ (seed >> 2u32);
     }
     seed
 }
@@ -63,14 +64,14 @@ impl CombineHasher {
     // ========================================================================
     /// new
     pub fn new(value: u32) -> Self {
-        CombineHasher { value: value }
+        CombineHasher { value }
     }
 }
 // ============================================================================
 impl Hasher for CombineHasher {
     // ========================================================================
     fn finish(&self) -> u64 {
-        self.value as u64
+        u64::from(self.value)
     }
     // ========================================================================
     fn write(&mut self, bytes: &[u8]) {
