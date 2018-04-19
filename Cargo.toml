@@ -11,5 +11,6 @@ readme          = "README.md"
 documentation   = "https://github.com/hanepjiv/hash_combine-rs/wiki"
 homepage        = "https://github.com/hanepjiv/hash_combine-rs"
 repository      = "https://github.com/hanepjiv/hash_combine-rs.git"
+publish         = false
 # =============================================================================
 [dependencies]
