@@ -1,16 +1,23 @@
 # -*- mode:toml; coding:utf-8-unix; -*-
 # =============================================================================
 [package]
-name            = "hash_combine"
-version         = "0.3.6-alpha.1"
-authors         = ["hanepjiv <hanepjiv@gmail.com>"]
-license         = "MIT/Apache-2.0"
-keywords        = ["hash"]
-description     = "Hash library with simple combine method."
-readme          = "README.md"
-documentation   = "https://github.com/hanepjiv/hash_combine-rs/wiki"
-homepage        = "https://github.com/hanepjiv/hash_combine-rs"
-repository      = "https://github.com/hanepjiv/hash_combine-rs.git"
-publish         = false
+name                    = "hash_combine"
+version                 = "0.3.6-alpha.2"
+authors                 = ["hanepjiv <hanepjiv@gmail.com>"]
+license                 = "MIT/Apache-2.0"
+keywords                = ["hash"]
+description             = "Hash library with simple combine method."
+readme                  = "README.md"
+documentation           = "https://docs.rs/hash_combine/"
+repository              = "https://github.com/hanepjiv/hash_combine-rs.git"
+include                 = [ "Cargo.toml",
+                            "build.rs",
+                            "src/**/*.rs",
+                            "crates-io.md",
+                            "README.md",
+                            "LICENSE-APACHE-2.0",
+                            "LICENSE-MIT"
+                            ]
+publish                 = false
 # =============================================================================
 [dependencies]
