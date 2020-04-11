@@ -3,7 +3,7 @@
 [package]
 edition                 = "2018"
 name                    = "hash_combine"
-version                 = "0.3.7-alpha.0"
+version                 = "0.3.7"
 authors                 = ["hanepjiv <hanepjiv@gmail.com>"]
 license                 = "MIT/Apache-2.0"
 keywords                = ["hash"]
@@ -19,6 +19,6 @@ include                 = [ "Cargo.toml",
                             "LICENSE-APACHE-2.0",
                             "LICENSE-MIT"
                             ]
-publish                 = false
+publish                 = true
 # =============================================================================
 [dependencies]
