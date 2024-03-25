@@ -6,11 +6,8 @@
 //  @author hanepjiv <hanepjiv@gmail.com>
 //  @copyright The MIT License (MIT) / Apache License Version 2.0
 //  @since 2016/03/12
-<<<<<<< HEAD
-//  @date 2024/03/25
-=======
+
 //  @date 2024/03/26
->>>>>>> 6c31194 (edition 2021, clippy)
 
 // ////////////////////////////////////////////////////////////////////////////
 // attribute  =================================================================
@@ -220,22 +217,13 @@ pub fn hash_combine(a_seed: u32, bytes: &[u8]) -> u32 {
 // ============================================================================
 /// struct CombineHasher
 #[derive(
-<<<<<<< HEAD
     Default, Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash,
-=======
-    Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default,
->>>>>>> 6c31194 (edition 2021, clippy)
 )]
 pub struct CombineHasher {
     /// value
     value: u32,
 }
 // ============================================================================
-<<<<<<< HEAD
-=======
-
-// ============================================================================
->>>>>>> 6c31194 (edition 2021, clippy)
 impl CombineHasher {
     // ========================================================================
     /// new
