@@ -1,7 +1,4 @@
-# hash_combine-rs
-
-## build status
-- master: [![Build Status](https://travis-ci.org/hanepjiv/hash_combine-rs.svg?branch=master)](https://travis-ci.org/hanepjiv/hash_combine-rs)
+# hash_combine-rs [![Rust](https://github.com/hanepjiv/hash_combine-rs/actions/workflows/rust.yml/badge.svg)](https://github.com/hanepjiv/hash_combine-rs/actions/workflows/rust.yml)
 
 ## License
 
