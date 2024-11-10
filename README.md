@@ -1,4 +1,8 @@
-# hash_combine-rs [![Rust](https://github.com/hanepjiv/hash_combine-rs/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/hanepjiv/hash_combine-rs/actions/workflows/rust.yml)
+# hash_combine-rs
+
+## build status
+
+- main: [![CI Rust](https://github.com/hanepjiv/hash_combine-rs/actions/workflows/ci-rust.yml/badge.svg)](https://github.com/hanepjiv/hash_combine-rs/actions/workflows/ci-rust.yml)
 
 ## License
 
