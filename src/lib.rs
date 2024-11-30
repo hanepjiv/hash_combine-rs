@@ -6,7 +6,7 @@
 //  @author hanepjiv <hanepjiv@gmail.com>
 //  @copyright The MIT License (MIT) / Apache License Version 2.0
 //  @since 2016/03/12
-//  @date 2024/11/09
+//  @date 2024/11/30
 
 // ////////////////////////////////////////////////////////////////////////////
 // attribute  =================================================================
@@ -216,7 +216,8 @@
 )]
 // ////////////////////////////////////////////////////////////////////////////
 // ============================================================================
-/// hash_combine
+/// `hash_combine`
+#[must_use]
 pub fn hash_combine(a_seed: u32, bytes: &[u8]) -> u32 {
     let mut seed = a_seed;
     for b in bytes {
@@ -227,7 +228,7 @@ pub fn hash_combine(a_seed: u32, bytes: &[u8]) -> u32 {
 }
 // ////////////////////////////////////////////////////////////////////////////
 // ============================================================================
-/// struct CombineHasher
+/// struct `CombineHasher`
 #[derive(
     Default, Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash,
 )]
@@ -239,6 +240,7 @@ pub struct CombineHasher {
 impl CombineHasher {
     // ========================================================================
     /// new
+    #[must_use]
     pub fn new(value: u32) -> Self {
         CombineHasher { value }
     }
@@ -283,7 +285,7 @@ mod tests {
             0x82u8, 0xf7u8, 0x00u8, 0x03u8, 0x0du8, 0x80u8, 0x79u8, 0x67u8,
         ]);
         assert!(
-            u64::from(0x03d71136u32) == hasher.finish(),
+            u64::from(0x03d7_1136_u32) == hasher.finish(),
             "CombineHasher::finish"
         );
     }
