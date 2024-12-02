@@ -3,9 +3,13 @@
 [package]
 name                    = "hash_combine"
 version                 = "0.3.10-alpha.2"
-keywords                = ["hash"]
+publish                 = false
+
 description             = "Hash library with simple combine method."
+keywords                = ["hash"]
+categories              = ["algorithms"]
 readme                  = "README.md"
+
 include                 = [ "Cargo.toml",
                             "build.rs",
                             "src/**/*.rs",
@@ -15,14 +19,12 @@ include                 = [ "Cargo.toml",
                             "LICENSE-MIT"
                             ]
 
+rust-version            = "1.83.0"
 edition                 = "2021"
-rust-version            = "1.82.0"
 authors                 = ["hanepjiv <hanepjiv@gmail.com>"]
 license                 = "MIT OR Apache-2.0"
 documentation           = "https://docs.rs/hash_combine/"
 homepage                = "https://github.com/hanepjiv/hash_combine-rs.git"
 repository              = "https://github.com/hanepjiv/hash_combine-rs.git"
-
-publish                 = false
 # =============================================================================
 [dependencies]
