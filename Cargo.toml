@@ -2,7 +2,7 @@
 # =============================================================================
 [package]
 name                    = "hash_combine"
-version                 = "0.3.10-alpha.2"
+version                 = "0.3.10-alpha.3"
 publish                 = false
 
 description             = "Hash library with simple combine method."
