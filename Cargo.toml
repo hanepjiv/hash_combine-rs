@@ -2,7 +2,7 @@
 # =============================================================================
 [package]
 name                    = "hash_combine"
-version                 = "0.3.10-alpha.7"
+version                 = "0.3.10-alpha.8"
 publish                 = false
 
 description             = "Hash library with simple combine method."
@@ -156,7 +156,6 @@ overlapping_range_endpoints = "forbid"
 path_statements = "forbid"
 private_bounds = "forbid"
 private_interfaces = "forbid"
-ptr_cast_add_auto_to_object = "forbid"
 ptr_to_integer_transmute_in_consts = "forbid"
 redundant_semicolons = "forbid"
 refining_impl_trait_internal = "forbid"
@@ -228,7 +227,6 @@ missing_fragment_specifier = "forbid"
 mutable_transmutes = "forbid"
 named_asm_labels = "forbid"
 no_mangle_const_items = "forbid"
-order_dependent_trait_objects = "forbid"
 overflowing_literals = "forbid"
 patterns_in_fns_without_body = "forbid"
 proc_macro_derive_resolution_fallback = "forbid"
