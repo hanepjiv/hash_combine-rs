@@ -6,9 +6,10 @@
 //  @author hanepjiv <hanepjiv@gmail.com>
 //  @copyright The MIT License (MIT) / Apache License Version 2.0
 //  @since 2016/03/12
-//  @date 2025/03/01
+//  @date 2025/04/06
 
-#![doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/README.md"))]
+#![cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"),
+                                            "/README.md")))]
 // ////////////////////////////////////////////////////////////////////////////
 // attribute  =================================================================
 #![no_std]
@@ -16,11 +17,14 @@
 // ============================================================================
 /// `hash_combine`
 #[must_use]
+#[inline]
 pub fn hash_combine(a_seed: u32, bytes: &[u8]) -> u32 {
     let mut seed = a_seed;
     for b in bytes {
-        seed ^=
-            u32::from(*b) ^ 0x9e37_79b9u32 ^ (seed << 6u32) ^ (seed >> 2u32);
+        seed ^= u32::from(*b)
+            ^ 0x9e37_79b9_u32
+            ^ (seed << 6_u32)
+            ^ (seed >> 2_u32);
     }
     seed
 }
@@ -39,6 +43,7 @@ impl CombineHasher {
     // ========================================================================
     /// new
     #[must_use]
+    #[inline]
     pub const fn new(value: u32) -> Self {
         Self { value }
     }
@@ -46,10 +51,12 @@ impl CombineHasher {
 // ============================================================================
 impl core::hash::Hasher for CombineHasher {
     // ========================================================================
+    #[inline]
     fn finish(&self) -> u64 {
         u64::from(self.value)
     }
     // ========================================================================
+    #[inline]
     fn write(&mut self, bytes: &[u8]) {
         self.value = hash_combine(self.value, bytes);
     }
@@ -59,7 +66,7 @@ impl core::hash::Hasher for CombineHasher {
 #[cfg(test)]
 mod tests {
     // ========================================================================
-    use core::hash::Hasher;
+    use core::hash::Hasher as _;
     // ------------------------------------------------------------------------
     use super::CombineHasher;
     // ========================================================================
@@ -79,8 +86,9 @@ mod tests {
     fn hash_combine() {
         let mut hasher = CombineHasher::default();
         hasher.write(&[
-            0x2bu8, 0x6cu8, 0x81u8, 0x58u8, 0xe8u8, 0x0fu8, 0x11u8, 0xe5u8,
-            0x82u8, 0xf7u8, 0x00u8, 0x03u8, 0x0du8, 0x80u8, 0x79u8, 0x67u8,
+            0x2b_u8, 0x6c_u8, 0x81_u8, 0x58_u8, 0xe8_u8, 0x0f_u8, 0x11_u8,
+            0xe5_u8, 0x82_u8, 0xf7_u8, 0x00_u8, 0x03_u8, 0x0d_u8, 0x80_u8,
+            0x79_u8, 0x67_u8,
         ]);
         assert!(
             u64::from(0x03d7_1136_u32) == hasher.finish(),
