@@ -6,7 +6,7 @@
 //  @author hanepjiv <hanepjiv@gmail.com>
 //  @copyright The MIT License (MIT) / Apache License Version 2.0
 //  @since 2016/03/12
-//  @date 2025/04/06
+//  @date 2025/04/28
 
 #![cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"),
                                             "/README.md")))]
@@ -71,13 +71,13 @@ mod tests {
     use super::CombineHasher;
     // ========================================================================
     #[test]
-    const fn test_send() {
+    const fn send() {
         const fn assert_send<T: Send>() {}
         assert_send::<CombineHasher>();
     }
     // ------------------------------------------------------------------------
     #[test]
-    const fn test_sync() {
+    const fn sync() {
         const fn assert_sync<T: Sync>() {}
         assert_sync::<CombineHasher>();
     }
