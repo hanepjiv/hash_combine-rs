@@ -13,7 +13,6 @@ readme                  = "README.md"
 include                 = [ "Cargo.toml",
                             "build.rs",
                             "src/**/*.rs",
-                            "crates-io.md",
                             "README.md",
                             "LICENSE-APACHE-2.0",
                             "LICENSE-MIT"
